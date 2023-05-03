@@ -77,6 +77,7 @@ const Input: FunctionComponent<InputProps> = ({
           />
         </div>
       </div>
+      {fieldError && <div>{fieldError.message}</div>}
     </div>
   );
 };

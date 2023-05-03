@@ -7,8 +7,7 @@ import Input from '@/components/Form/Input';
 import { FieldValues, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import groupValidationSchema from '@/validations/group.validation';
-
-const inter = Inter({ subsets: ['latin'] });
+import useGroupStore from '@/stores/group.store';
 
 const defaultValues = {
   name: '',
@@ -24,8 +23,10 @@ export default function Home() {
     resolver: yupResolver(groupValidationSchema),
   });
 
-  const onSubmit = (data: FieldValues) => {
-    console.log(data.name);
+  const { group, create } = useGroupStore();
+
+  const onSubmit = (data: any) => {
+    create({ ...data, participants: [] });
   };
 
   return (
