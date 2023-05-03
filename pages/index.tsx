@@ -41,7 +41,7 @@ export default function Home() {
               label="Nome do grupo"
               errors={errors}
             />
-            <Button label="Test" variant="alt" type="submit" />
+            <Button label="Criar grupo" variant="alt" type="submit" />
           </Form>
         </div>
       </Grid>

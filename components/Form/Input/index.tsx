@@ -65,6 +65,7 @@ const Input: FunctionComponent<InputProps> = ({
                     setInitial(true);
                   }
                 }}
+                role="input"
                 placeholder={placeholder}
                 onChange={(e) => {
                   onChange(e);
