@@ -52,6 +52,7 @@ interface ButtonProps {
     position: 'before' | 'after' | 'center';
   };
   onClick?: Function;
+  type: 'button' | 'submit';
 }
 
 export const ButtonTransition = 'transition duration-300';
@@ -78,6 +79,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   shape = 'regular',
   icon,
   onClick,
+  type,
 }) => {
   const buttonClasses = `${ButtonBase} ${
     buttonVariants[variant as keyof VariantCollection]
@@ -116,6 +118,7 @@ const Button: FunctionComponent<ButtonProps> = ({
     <button
       className={buttonClasses}
       onClick={onClick ? () => onClick() : () => null}
+      type={type}
     >
       {icon && icon.position === 'before' && iconComponent(icon.position)}
       {icon && icon.position === 'center'
